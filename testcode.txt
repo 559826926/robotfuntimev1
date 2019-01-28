@@ -3,14 +3,14 @@ Hello, this is where we will put the code!
 
 */
 
-void setup {
+void setup() {
 
 
 
 }
 
 
-void run {
+void loop() {
 
 
 }
