@@ -12,9 +12,12 @@ void setup() {
 
 
 void loop() {
-//moving (as in forward, backwards n' stuff)
+//moving
+//forwards
+//backwards (moving+turning+speed)
 
 //moving as in turning
+//15deg incriments for functions
 
 //sensing things with sensor A
 
