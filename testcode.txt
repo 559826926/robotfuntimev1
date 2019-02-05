@@ -12,6 +12,7 @@ void setup() {
 
 
 void loop() {
+//For the pwm controlling for motors, look at: https://www.arduino.cc/en/tutorial/PWM
 //moving
 //forwards
 //backwards (moving+turning+speed)
