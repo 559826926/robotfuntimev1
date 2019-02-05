@@ -16,15 +16,8 @@ void loop() {
 //forwards
 //backwards (moving+turning+speed)
 
-//moving as in turning (15deg incriments for functions)
+//moving as in turning (15deg incriments as many times as we need to get the desired turn in)
 //15
-//30
-//45
-//60
-//75
-//90
-//180
-//270
 
 //sensing things with sensor A
 
