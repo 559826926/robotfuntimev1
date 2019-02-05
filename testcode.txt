@@ -1,6 +1,7 @@
 /*
-Hello, this is where we will put the code!
-
+Description: (currently) mock code for our arduino movements/funtionality
+Authors: Ethan, Lukas, Jacob, Gabby, Andrea
+Date(s): Feb - April 2019
 */
 
 void setup() {
