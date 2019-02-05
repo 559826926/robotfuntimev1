@@ -12,6 +12,12 @@ void setup() {
 
 
 void loop() {
+//moving (as in forward, backwards n' stuff)
 
+//moving as in turning
+
+//sensing things with sensor A
+
+//sensing things with sensor B
 
 }
