@@ -4,6 +4,8 @@ Authors: Ethan, Lukas, Jacob, Gabby, Andrea
 Date(s): Feb - April 2019
 */
 #include <Servo.h>
+#include <Adafruit_MotorShield.h>
+
 
 void setup() {
 
