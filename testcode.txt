@@ -15,7 +15,7 @@ void setup() {
 
 
 void loop() {
-//For the pwm controlling for motors, look at: https://www.arduino.cc/en/tutorial/PWM
+
 
 // It appears that to control something over pwm on the arduino we simply have to use the analogWrite(); function. It doesn't look to require any extra libraries.
 
