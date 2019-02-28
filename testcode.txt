@@ -6,10 +6,23 @@ Date(s): Feb - April 2019
 #include <Servo.h>
 #include <Adafruit_MotorShield.h>
 
+// Create the motor shield object with the default I2C address
+Adafruit_MotorShield AFMS = Adafruit_MotorShield();
+
+
+// Select which 'port' M1, M2, M3 or M4. In this case, M1
+Adafruit_DCMotor *myMotor = AFMS.getMotor(1);
+Adafruit_DCMotor *myMotorR = AFMS.getMotor(2);
+
+
 
 void setup() {
-
-
+//According to the example code for Arduino Motor shield v2, this starts the shield.
+AFMS.begin();
+myMotor->setSpeed(150);
+myMotor->run(FORWARD);
+// turn on motor
+myMotor->run(RELEASE);
 
 }
 
@@ -29,5 +42,13 @@ void loop() {
 //sensing things with sensor A
 
 //sensing things with sensor B
+
+}
+
+void leftForward() {
+  myMotor->run(FORWARD) //starts the motor at default speed set above
+  delay(1000) // a delay that we will probably replace with a variable later
+  myMotor->run(RELEASE) // Stops the motor.
+
 
 }
