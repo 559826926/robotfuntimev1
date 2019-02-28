@@ -20,9 +20,12 @@ void setup() {
 //According to the example code for Arduino Motor shield v2, this starts the shield.
 AFMS.begin();
 myMotor->setSpeed(150);
+myMotorR->setSpeed(150);
+myMotor->run(FORWARD);
 myMotor->run(FORWARD);
 // turn on motor
 myMotor->run(RELEASE);
+myMotorR->run(RELEASE);
 
 }
 
