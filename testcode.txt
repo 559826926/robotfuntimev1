@@ -1,6 +1,6 @@
 /*
 Description: (currently) mock code for our arduino movements/funtionality
-Authors: Ethan, Lukas, Jacob, Gabby, Andrea
+Authors: Ethan, Lukas, Jacob, Gabby, Andrea, Henry.
 Date(s): Feb - April 2019
 */
 #include <Servo.h>
