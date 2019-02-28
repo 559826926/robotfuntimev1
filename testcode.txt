@@ -53,5 +53,15 @@ void leftForward() {
   delay(1000) // a delay that we will probably replace with a variable later
   myMotor->run(RELEASE) // Stops the motor.
 
+}
+
+
+void rightForward() {
+ myMotorR->run(FORWARD) //starts the motor at default speed set above
+ delay(1000) // a delay that we will probably replace with a variable later
+ myMotorR->run(RELEASE) // Stops the motor.
+
 
 }
+
+
