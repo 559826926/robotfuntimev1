@@ -11,7 +11,7 @@ Adafruit_MotorShield AFMS = Adafruit_MotorShield();
 
 
 // Select which 'port' M1, M2, M3 or M4. In this case, M1
-Adafruit_DCMotor *myMotoL = AFMS.getMotor(1);
+Adafruit_DCMotor *myMotorL = AFMS.getMotor(1);
 Adafruit_DCMotor *myMotorR = AFMS.getMotor(2);
 
 
