@@ -30,11 +30,6 @@ myMotorR->run(RELEASE);
 void loop() {
 
 }
-// It appears that to control something over pwm on the arduino we simply have to use the analogWrite(); function. It doesn't look to require any extra libraries.
-
-//moving
-//forwards
-//backwards (moving+turning+speed)
 
 //moving as in turning (15deg incriments as many times as we need to get the desired turn in)
 //15
