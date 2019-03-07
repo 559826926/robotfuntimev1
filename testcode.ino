@@ -46,7 +46,7 @@ void leftForward() {
 }
 
 void rightForward() {
-	myMotorR->run(FORWARD); //starts the motor at default speed set above
+	myMotorR->run(BACKWARD); //starts the motor at default speed set above
 }
 
 void leftBackward() {
@@ -54,7 +54,7 @@ void leftBackward() {
 }
 
 void rightBackward() {
-	myMotorR->run(BACKWARD); //starts the motor in reverse at default speed
+	myMotorR->run(FORWARD); //starts the motor in reverse at default speed
 }
 
 void leftStop() {

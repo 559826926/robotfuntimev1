@@ -2,6 +2,8 @@
 Description: (currently) mock code for our arduino movements/funtionality
 Authors: Ethan, Lukas, Jacob, Gabby, Andrea, Henry.
 Date(s): Feb - April 2019
+Repository for PIR sensor
+https://github.com/jeroendoggen/Arduino-distance-sensor-library/blob/master/DistanceSensor
 */
 #include <Servo.h>
 #include <Adafruit_MotorShield.h>
@@ -63,5 +65,3 @@ void rightForward() {
 
 
 }
-
-
