@@ -35,21 +35,11 @@ highGround.attach(9);
 younglings.attach(10);
 
 highGround.write(servpos);
+younglings.write(servpos);
 
 }
 
 void loop() {
-
-hgLeft();
-delay(5000);
-hgFront();
-delay(5000);
-hgRight();
-delay(5000);
-hgFront();
-delay(5000);
-
-
 
 
 
@@ -108,6 +98,23 @@ void hgFront(){
   highGround.write(90);
   
   }
+
+void yLeft(){
+  younglings.write(180);
+  
+  }
+
+void yRight(){
+
+  younglings.write(0);
+  
+}
+
+void yFront(){
+  younglings.write(90);
+  
+  }
+
 
 
 
