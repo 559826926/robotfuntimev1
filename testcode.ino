@@ -13,7 +13,11 @@ Adafruit_MotorShield AFMS = Adafruit_MotorShield();
 // Select which 'port' M1, M2, M3 or M4. In this case, M1
 Adafruit_DCMotor *myMotorL = AFMS.getMotor(1);
 Adafruit_DCMotor *myMotorR = AFMS.getMotor(2);
+Servo highGround;
+Servo younglings;
 
+
+int servpos = 90;
 
 void setup() {
 //According to the example code for Arduino Motor shield v2, this starts the shield.
@@ -25,9 +29,29 @@ myMotorL->run(FORWARD);
 // turn on motor
 myMotorL->run(RELEASE);
 myMotorR->run(RELEASE);
+
+
+highGround.attach(9);
+younglings.attach(10);
+
+highGround.write(servpos);
+
 }
 
 void loop() {
+
+hgLeft();
+delay(5000);
+hgFront();
+delay(5000);
+hgRight();
+delay(5000);
+hgFront();
+delay(5000);
+
+
+
+
 
 }
 
@@ -68,6 +92,24 @@ void rightStop() {
 
 // Servo Controls
 //here
+
+void hgLeft(){
+  highGround.write(180);
+  
+  }
+
+void hgRight(){
+
+  highGround.write(0);
+  
+}
+
+void hgFront(){
+  highGround.write(90);
+  
+  }
+
+
 
 // ------------------------------------------
 //											You are a Bold One.
