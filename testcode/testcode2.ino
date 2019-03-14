@@ -5,23 +5,35 @@ Date(s): Feb - April 2019
 */
 #include <Servo.h>
 #include <Adafruit_MotorShield.h>
+#include <DistanceGP2Y0A21YK.h>
 
 // Create the motor shield object with the default I2C address
 Adafruit_MotorShield AFMS = Adafruit_MotorShield();
+
+// Creates IR sensor object
+DistanceGP2Y0A21YK IR_Dist;
 
 
 // Select which 'port' M1, M2, M3 or M4. In this case, M1
 Adafruit_DCMotor *myMotorL = AFMS.getMotor(1);
 Adafruit_DCMotor *myMotorR = AFMS.getMotor(2);
+
 Servo highGround;
 Servo younglings;
 
+int servpos = 90; // this is the setting of original position of the servo
 
-int servpos = 90;
+
+//setup the ultrasonic sensor pins
+const int trigPin = 9;
+const int echoPin = 10;
+long duration;
+int distance;
 
 void setup() {
 //According to the example code for Arduino Motor shield v2, this starts the shield.
 AFMS.begin();
+IR_Dist.begin(A0); // starts the IR sensor at port A0
 myMotorL->setSpeed(150);
 myMotorR->setSpeed(150);
 myMotorL->run(FORWARD);
@@ -30,13 +42,17 @@ myMotorL->run(FORWARD);
 myMotorL->run(RELEASE);
 myMotorR->run(RELEASE);
 
-
+//servo setup
 highGround.attach(9);
 younglings.attach(10);
 
 highGround.write(servpos);
 younglings.write(servpos);
 
+// setup for the ultrasonic sensor
+pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+pinMode(echoPin, INPUT); // Sets the echoPin as an Input
+Serial.begin(9600); // Starts the serial communication
 }
 
 void loop() {
@@ -51,7 +67,6 @@ void loop() {
 //sensing things with sensor A
 
 //sensing things with sensor B
-
 
 
 // Main Motor Controls
@@ -81,8 +96,7 @@ void rightStop() {
 //--------------------------------------------
 
 // Servo Controls
-//here
-
+// here
 void hgLeft(){
   highGround.write(180);
   
@@ -116,8 +130,6 @@ void yFront(){
   }
 
 
-
-
 // ------------------------------------------
 //											You are a Bold One.
 // General Kenobi Controls    	(0_0)/			\\(0_0)//
@@ -131,10 +143,16 @@ void forward(){
 	 leftBackward();
  }
 
- void stop(){
+ void halt(){
 	 rightStop();
 	 leftStop();
  }
+// -----------------------
+
+// Timing Controls
+
+
+
 // -----------------------
 
 // 		Turns
@@ -170,3 +188,31 @@ void sharpLeftTurn(){
 	rightStop();
 }
 //------------------------
+
+//    IR Sensor Control
+
+int getIRDistance(){
+	return IR_Dist.getDistanceCentimeter();
+}
+
+// Ultrasonic Control
+
+float UScontrol() {
+  //Ultrasonic sensor looks forward for distance.
+  // Clears the trigPin
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  duration = pulseIn(echoPin, HIGH);
+  // Calculating the distance
+  distance= duration*0.034/2;
+  // Prints the distance on the Serial Monitor
+  Serial.print("Distance: ");
+  Serial.println(distance);
+  return distance;
+  
+  }
