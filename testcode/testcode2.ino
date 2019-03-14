@@ -25,8 +25,8 @@ int servpos = 90; // this is the setting of original position of the servo
 
 
 //setup the ultrasonic sensor pins
-const int trigPin = 9;
-const int echoPin = 10;
+const int trigPin = 7;
+const int echoPin = 8;
 long duration;
 int distance;
 
