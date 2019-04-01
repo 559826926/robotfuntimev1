@@ -34,8 +34,8 @@ void setup() {
 //According to the example code for Arduino Motor shield v2, this starts the shield.
 AFMS.begin();
 //IR_Dist.begin(A0); // starts the IR sensor at port A0
-myMotorL->setSpeed(150);
-myMotorR->setSpeed(150);
+myMotorL->setSpeed(100);
+myMotorR->setSpeed(100);
 myMotorL->run(FORWARD);
 myMotorL->run(FORWARD);
 // turn on motor
@@ -79,7 +79,6 @@ float UScontrol() {
 
 void loop() {
 
-  while (true){
     if (UScontrol() >tolerance){
       backward();
       }
@@ -92,7 +91,7 @@ void loop() {
         delay(1000); 
         hgFront();      
         }
-      if (UScontrol() <= tolerance){
+      else if (UScontrol() <= tolerance){
         hgFront();
         delay(50);
         hgRight();
@@ -106,7 +105,7 @@ void loop() {
           delay(50);
         }      
       }   
-    }
+    
 
 
 
