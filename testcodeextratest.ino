@@ -81,7 +81,7 @@ void loop() {
 
   while (true){
     if (UScontrol() >tolerance){
-      forward();
+      backward();
       }
     if ( UScontrol() <= tolerance){
       halt();
